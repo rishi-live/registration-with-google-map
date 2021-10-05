@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "MEAN Stack curd application with google map integrated",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishi-live/registration-with-google-map.git"
+  },
+  "author": "RISHI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishi-live/registration-with-google-map/issues"
+  },
+  "homepage": "https://github.com/rishi-live/registration-with-google-map#readme"
+}
