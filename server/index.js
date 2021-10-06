@@ -1,6 +1,6 @@
 const express = require("express");
-const createConnection = require("./db/connection");
-const { User } = require("./models/user");
+const createConnection = require("./database/connection");
+const { User } = require("./database/models/userModel2");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,11 +21,11 @@ app.get("/api", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Example app listening at port: ${port}`);
 });
 
 const userRouter = express.Router();
-app.use("/api/users", userRouter);
+// app.use("/api/users", userRouter);
 
 userRouter.get("/", (req, res) => {
     User.find().then((users) => {
