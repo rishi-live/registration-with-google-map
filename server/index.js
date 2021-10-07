@@ -25,7 +25,7 @@ app.listen(port, () => {
 });
 
 const userRouter = express.Router();
-// app.use("/api/users", userRouter);
+app.use("/api/users", userRouter);
 
 userRouter.get("/", (req, res) => {
     User.find().then((users) => {
