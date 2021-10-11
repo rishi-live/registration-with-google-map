@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { MapService } from 'src/app/services/map.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,9 +9,11 @@ import { User } from 'src/app/models/user';
 export class RegisterComponent implements OnInit {
   // name: string = "Rishi";
   user: User = new User();
-  constructor() { }
+  constructor(private mapService: MapService) { }
 
   ngOnInit(): void {
+    console.log("generate token called from Register component");    
+    this.mapService.generateToken();
   }
 
   register() {
