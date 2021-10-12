@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/rishi-live/registration-with-google-map#readme",
   "dependencies": {
+    "axios": "^0.22.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^6.0.9",
     "nodemon": "^2.0.13"

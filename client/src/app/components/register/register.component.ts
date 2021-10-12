@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 import { MapService } from 'src/app/services/map.service';
 @Component({
   selector: 'app-register',
@@ -9,18 +10,23 @@ import { MapService } from 'src/app/services/map.service';
 export class RegisterComponent implements OnInit {
   // name: string = "Rishi";
   user: User = new User();
-  constructor(private mapService: MapService) { }
+  selectedAddress: any = {};
+  constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
-    console.log("generate token called from Register component");    
-    this.mapService.generateToken();
-  }
+  ngOnInit(): void {}
 
   register() {
-    console.log("register user",);
-    console.log({user:this.user});
+    // this.user.address = this.selectedAddress;
+    this.authService.register(this.user).subscribe((response: any) => {
+      console.log("user created");
+      this.user = new User();
+      // this.selectedAddress = {};
+    })
   }
-  onAddressType(value: any) {
-    console.log(value)
+
+  onSelectAddress(address:  any) {
+    console.log("called from parent component");
+    this.user.address = address;    
   }
+  
 }
